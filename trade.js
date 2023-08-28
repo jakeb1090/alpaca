@@ -40,7 +40,7 @@ const executeTrade = async (sym) => {
 
 }
 
-let orderReq = {
+let orderReqBody = {
     status: 'open',
     after: new Date('2021-01-01'),
     until: new Date(Date.now()),
@@ -48,4 +48,4 @@ let orderReq = {
     direction: 'asc'
 }
 
-export { executeTrade, orderReq }
+export { executeTrade, orderReqBody }

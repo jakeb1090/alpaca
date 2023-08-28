@@ -2,6 +2,8 @@ import { alpaca } from './alpaca.js'
 import { createRequire } from "module";
 const require = createRequire(import.meta.url);
 const talib = require('talib');
+// const SMA = require('technicalindicators').SMA;
+
 
 
   let clam = {
@@ -65,4 +67,66 @@ const talib = require('talib');
 }
 
 
-priceBreakoutStrategy(clam['AAPL'], 14)
+// priceBreakoutStrategy(clam['AAPL'], 14)
+
+
+let marketData = {
+  open : [
+    126.99,127.10,127.11,126.93,126.98,126.99,126.82,126.95,127.05,127.05,127.08,127.20,127.25,127.17,127.25
+  ],
+  high : [
+    127.36,127.31,127.21,127.15,127.08,127.19,127.09,127.08,127.18,127.16,127.31,127.35,127.34,127.29,127.36
+  ],
+  low : [
+    126.99,127.10,127.11,126.93,126.98,126.99,126.82,126.95,127.05,127.05,127.08,127.20,127.25,127.17,127.25
+  ],
+  close : [
+    127.28,127.11,127.15,127.04,126.98,127.07,126.93,127.05,127.11,127.15,127.30,127.28,127.28,127.29,127.25
+  ],
+  volume : [
+    89329,16137,23945,20679,27252,20915,17372,17600,13896,6700,13848,9925,5540,10803,19400
+  ],
+};
+
+
+
+
+
+let output = talib.explain('SMA', marketData)
+let arr1 = []
+let obj = {
+  'SMA': 9,
+  'RSI': 8,
+  'STOCH': 7,
+  'MACD': 7,
+  'AROON': 7,
+  'OBV': 'U'
+}
+let arr3 = []
+// let out = output.forEach((item) => {
+
+//   if (obj[item.name]) arr1.push(item)
+
+// })
+
+
+// console.log(arr1)
+
+// SMA
+// RSI
+// STOCH
+// MACD
+// AROON
+// OBV
+//
+
+[
+  'version',
+  'functions',
+  'functionUnstIds',
+  'explain',
+  'execute',
+  'setUnstablePeriod'
+]
+
+console.log(output)

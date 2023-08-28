@@ -1,6 +1,6 @@
 
 import { alpaca } from './alpaca.js'
-import { testCompletion } from './openai/testCompletion.js'
+import { gpt } from './gpt.js'
 import { executeTrade } from './trade.js'
 import { RSIcheck } from './dailyBars.js'
 import Websocket from 'ws'
