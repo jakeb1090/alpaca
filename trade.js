@@ -22,7 +22,7 @@ const executeTrade = async (sym) => {
 
   const buyReq = {
     symbol: sym,
-    qty: 1,
+    qty: 5,
     side: 'buy',
     type: 'market',
     time_in_force: 'day'
