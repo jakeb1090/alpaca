@@ -35,7 +35,7 @@ const executeTrade = async (sym) => {
       qty: res.qty,
       symbol: sym,
     })
-  }).then(() => alpaca.getOrders(orderReq).
+  }).then(() => alpaca.getOrders(buyReq).
     then((res) => console.log('Open orders: ', res.length)))
 
 }
