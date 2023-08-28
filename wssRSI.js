@@ -36,7 +36,7 @@ wss.on('message', async (data) => {
 
   if (obj[0].T === 'n') {
     let { headline, symbols, T } = obj[0]
-    let rating = await testCompletion(headline, symbols[0])
+    let rating = await gpt(headline, symbols[0])
     let rsi = await RSIcheck(symbols[0])
 
     await console.log('vals: ', { headline, symbols, T, rating, rsi })
