@@ -1,7 +1,10 @@
 import { alpaca } from './alpaca.js'
 import { gpt } from './gpt.js'
-import { executeTrade } from './trade.js'
+// import { RSIcheck } from './getData.js'
+// import { getNextDayPrice } from './algo2.js'
+// import { executeTrade } from './trade.js'
 import Websocket from 'ws'
+import * as fs from 'fs';
 import 'dotenv/config'
 
 const { API_KEY, API_SECRET } = process.env
@@ -36,6 +39,7 @@ wss.on('message', async (data) => {
     let { headline, symbols, T } = obj[0]
     let rating = await gpt(headline, symbols[0])
     console.log('vals: ', { headline, symbols, T, rating })
+    fs.appendFileSync('orderlog.txt', JSON.stringify({ headline, symbols, T, rating }) + ',\n')
 
     if (rating > 80) {
       //buy stock

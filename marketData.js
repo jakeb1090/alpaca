@@ -1,4 +1,4 @@
-const marketData =[
+let marketData =[
 {
   Timestamp: '2023-08-23T18:04:00Z',
   OpenPrice: 181.275,
